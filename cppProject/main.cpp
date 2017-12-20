@@ -17,11 +17,12 @@ int main(int argc, char * argv[])
     Engine e(argc,argv);
     
     //Setting s();
+    std::vector<Boat *> boats;
+    std::vector<Star *> stars;
     
-    std::vector<Papillon *> paps;
-    GraphicEngine * ge = new MyGraphicEngine(&paps);
-    GameEngine * gme = new MyGameEngine(&paps);
-    ControlEngine * ce = new MyControlEngine(&paps);
+    GraphicEngine * ge = new MyGraphicEngine(&boats, &stars);
+    GameEngine * gme = new MyGameEngine(&boats, &stars);
+    ControlEngine * ce = new MyControlEngine(&boats, &stars);
     
     e.setGraphicEngine(ge);
     e.setGameEngine(gme);

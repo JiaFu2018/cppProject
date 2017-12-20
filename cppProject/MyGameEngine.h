@@ -1,12 +1,14 @@
 #pragma once
 
 #include "Engine.h"
-#include "Papillon.h"
+#include "Boat.h"
+#include "Star.h"
 class MyGameEngine:public GameEngine {
-    std::vector<Papillon * > *paps;
+    std::vector<Boat *> *boats;
+    std::vector<Star *> *stars;
 public:
     
-    MyGameEngine(std::vector<Papillon * > * paps_):paps(paps_){}
+    MyGameEngine(std::vector<Boat * > * boats_, std::vector<Star * > * stars_):boats(boats_),stars(stars_){}
     
     virtual void idle();
     

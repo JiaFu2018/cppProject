@@ -11,7 +11,6 @@
 		31742E0C1FE90A0F0092901A /* MyGraphicEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31742E031FE90A0F0092901A /* MyGraphicEngine.cpp */; };
 		31742E0D1FE90A0F0092901A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31742E061FE90A0F0092901A /* main.cpp */; };
 		31742E0E1FE90A0F0092901A /* MyControlEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31742E081FE90A0F0092901A /* MyControlEngine.cpp */; };
-		31742E0F1FE90A0F0092901A /* Papillon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31742E091FE90A0F0092901A /* Papillon.cpp */; };
 		31742E121FE90EE30092901A /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31742E111FE90EE30092901A /* GLUT.framework */; };
 		31742E141FE90EF40092901A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31742E131FE90EF40092901A /* OpenGL.framework */; };
 		31742E181FE90F430092901A /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31742E171FE90F430092901A /* libEngine.a */; };
@@ -46,11 +45,9 @@
 		31742E021FE90A0F0092901A /* MyGameEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyGameEngine.cpp; sourceTree = "<group>"; };
 		31742E031FE90A0F0092901A /* MyGraphicEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyGraphicEngine.cpp; sourceTree = "<group>"; };
 		31742E041FE90A0F0092901A /* MyGameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGameEngine.h; sourceTree = "<group>"; };
-		31742E051FE90A0F0092901A /* Papillon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Papillon.h; sourceTree = "<group>"; };
 		31742E061FE90A0F0092901A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		31742E071FE90A0F0092901A /* MyGraphicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGraphicEngine.h; sourceTree = "<group>"; };
 		31742E081FE90A0F0092901A /* MyControlEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyControlEngine.cpp; sourceTree = "<group>"; };
-		31742E091FE90A0F0092901A /* Papillon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Papillon.cpp; sourceTree = "<group>"; };
 		31742E0A1FE90A0F0092901A /* MyControlEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyControlEngine.h; sourceTree = "<group>"; };
 		31742E111FE90EE30092901A /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		31742E131FE90EF40092901A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -105,8 +102,6 @@
 				31742E041FE90A0F0092901A /* MyGameEngine.h */,
 				31742E031FE90A0F0092901A /* MyGraphicEngine.cpp */,
 				31742E071FE90A0F0092901A /* MyGraphicEngine.h */,
-				31742E091FE90A0F0092901A /* Papillon.cpp */,
-				31742E051FE90A0F0092901A /* Papillon.h */,
 				31FA26451FEA6F1D0092BABC /* Boat.cpp */,
 				31FA26471FEA6F2E0092BABC /* Boat.h */,
 				31FA26481FEA6F810092BABC /* Setting.cpp */,
@@ -212,7 +207,6 @@
 				31FA26491FEA6F810092BABC /* Setting.cpp in Sources */,
 				31742E0E1FE90A0F0092901A /* MyControlEngine.cpp in Sources */,
 				31FA264C1FEA6FC00092BABC /* Star.cpp in Sources */,
-				31742E0F1FE90A0F0092901A /* Papillon.cpp in Sources */,
 				31FA26461FEA6F1D0092BABC /* Boat.cpp in Sources */,
 				31742E0B1FE90A0F0092901A /* MyGameEngine.cpp in Sources */,
 				31742E0D1FE90A0F0092901A /* main.cpp in Sources */,

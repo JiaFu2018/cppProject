@@ -8,7 +8,10 @@
 
 #include "Boat.h"
 
-void Boat::draw(){
+void Boat::draw(){    
+    //GraphicPrimitives::drawFillRect2D(posX,posY,width,height,R,G,B);
     
-    GraphicPrimitives::drawFillRect2D(posX,posY,width,height,R,G,B);
+    GraphicPrimitives::drawFillTriangle2D(boatX, boatY - boatSize * boatType, boatX, boatY + boatSize * boatType, boatX + boatSize * boatType, boatY, 1.0f, 0.0f, 1.0f);
 }
+
+void Boat::tick(){}

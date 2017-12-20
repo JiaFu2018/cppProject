@@ -1,20 +1,16 @@
 #pragma once
 #include "Engine.h"
 #include "GraphicPrimitives.h"
-#include "Papillon.h"
+#include "Boat.h"
+#include "Star.h"
 
 class MyGraphicEngine:public GraphicEngine {
-    
-    std::vector<Papillon * > *paps;
-//    std::vector<Boat * > *boats;
-//    std::vector<Star * > *stars;
-    
-    char * str;
+    std::vector<Boat *> *boats;
+    std::vector<Star *> *stars;
 public:
     
-    MyGraphicEngine(std::vector<Papillon * > * paps_):paps(paps_){}
-    
     float x,y;
+    MyGraphicEngine(std::vector<Boat * > * boats_, std::vector<Star * > * stars_):boats(boats_),stars(stars_){}
     
     virtual void Draw();
     

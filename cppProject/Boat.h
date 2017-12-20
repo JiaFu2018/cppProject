@@ -11,13 +11,16 @@
 class Boat {
     
 public:
-    Boat(float posX_ = 0.0f,float posY_ = 0.0f):posX(posX_),posY(posY_),width(0.1f),height(0.1f),VposX(0.01f),VposY(0.02f),Vwidth(0.01f),Vheight(-0.02f), R (1.0f), G(0.0f), B(1.0f){}
+
+    Boat(float boatX_ = 0.0f,float boatY_ = 0.0f, float boatSize_ = 0.05f, int boatType_ =2):
+    boatX(boatX_),
+    boatY(boatY_),
+    boatSize(boatSize_),
+    boatType(boatType_){}
     
-    float posX,posY,width,height;
-    float VposX,VposY,Vwidth,Vheight;
-    float R,G,B;
+    float boatX, boatY, boatSize;
+    int boatType;
     
     void draw();
     void tick();
-    
 };

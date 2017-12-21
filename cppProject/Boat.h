@@ -16,11 +16,18 @@ public:
     boatX(boatX_),
     boatY(boatY_),
     boatSize(boatSize_),
-    boatType(boatType_){}
+    boatType(boatType_),
+    bombX(boatX_),
+    bombY(boatY_),
+    bombFrequency(0.5f),
+    bombSpeed(0.01f){}
     
     float boatX, boatY, boatSize;
-    int boatType;
+    float bombX, bombY, bombFrequency, bombSpeed;
+    int boatType, bombType;
+    const double PI = acos(-1.0f);
     
     void draw();
     void tick();
+    void drawBomb(float bombX, float bombY, int bombType, float bombFrequency, float bombSpeed);
 };

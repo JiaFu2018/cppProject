@@ -12,14 +12,11 @@
 class Star {
     
 public:
-
-    float starX, starY, R;
     
-    Star(float starX, float starY, float R){
-        starX = 0.9f;
-        starY = 0.4f;
-        R = 0.02f;
-    }
+    Star(float starX_ = 0.0f, float starY_ = 0.0f, float starR_ = 0.02f, float starSpeed_ = 0.01f):starX(starX_),starY(starY_),starR(starR_),starSpeed(starSpeed_){}
+    
+    float starX, starY, starR, starSpeed;
+    int starType, starEnergy;
     
     void draw();
     void tick();

@@ -19,7 +19,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
                 float x = 1 + rand() / float(RAND_MAX) * 8;
                 float y = (rand() % 4 - 1.5f) / 4;                
                 int starEnergy = rand() % 3 + 1 ;
-                float starSpeed = 1 / (starEnergy * 100.f);
+                float starSpeed = 1 / (starEnergy * 60.f);
                 stars->push_back(new Star(x, y, 0.02f, starSpeed, starEnergy));
             }
         }else if(mouseX >= -0.88f && mouseX < -0.73f && mouseY >= -0.8f && mouseY < -0.63f){

@@ -14,9 +14,9 @@ void Setting::draw(){
     drawSysInfo();
     drawChessboard();
     drawButton(0.38f, -0.8f, "start");
-    (this->buttonStatus == "boatA") ? drawButtonChosen(-0.8f, -0.72f, "boatA") : drawButton(-0.8f, -0.72f, "boatA");
-    (this->buttonStatus == "boatB") ? drawButtonChosen(-0.6f, -0.72f, "boatB") : drawButton(-0.6f, -0.72f, "boatB");
-    (this->buttonStatus == "boatC") ? drawButtonChosen(-0.4f, -0.72f, "boatC") : drawButton(-0.4f, -0.72f, "boatC");
+    (buttonStatus == "boatA") ? drawButtonChosen(-0.8f, -0.72f, "boatA") : drawButton(-0.8f, -0.72f, "boatA");
+    (buttonStatus == "boatB") ? drawButtonChosen(-0.6f, -0.72f, "boatB") : drawButton(-0.6f, -0.72f, "boatB");
+    (buttonStatus == "boatC") ? drawButtonChosen(-0.4f, -0.72f, "boatC") : drawButton(-0.4f, -0.72f, "boatC");
 }
 
 void Setting::drawSysInfo(){

@@ -14,7 +14,7 @@ void Boat::draw(){
         boatType = 1;
         bombType = 1;
         bombFrequency = 0.1f;
-        bombSpeed = 0.02f;
+        bombSpeed = 0.01f;
         newBoat = false;
         drawBoat(boatType);
         drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
@@ -22,7 +22,7 @@ void Boat::draw(){
         boatType = 2;
         bombType = 2;
         bombFrequency = 0.5f;
-        bombSpeed = 0.01f;
+        bombSpeed = 0.006f;
         newBoat = false;
         drawBoat(boatType);
         drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
@@ -30,7 +30,7 @@ void Boat::draw(){
         boatType = 3;
         bombType = 3;
         bombFrequency = 1.5f;
-        bombSpeed = 0.005f;
+        bombSpeed = 0.003f;
         newBoat = false;
         drawBoat(boatType);
         drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);

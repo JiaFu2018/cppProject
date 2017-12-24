@@ -25,7 +25,7 @@ public:
     int level = 1;
     int starNum = 20;
     int coin = 0;
-    std::string buttonStatus;
+    std::string buttonStatus = "boatA";
     
     void draw();
     void drawSysInfo();

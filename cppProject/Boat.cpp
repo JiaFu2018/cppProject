@@ -9,6 +9,38 @@
 #include "Boat.h"
 
 void Boat::draw(){
+    Setting* s = Setting::getInstance();
+    if(s->buttonStatus == "boatA" && newBoat == true){
+        boatType = 2;
+        bombType = 2;
+        bombFrequency = 0.5f;
+        bombSpeed = 0.01f;
+        newBoat = false;
+        drawBoat(boatType);
+        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
+    }else if(s->buttonStatus == "boatB" && newBoat == true){
+        boatType = 1;
+        bombType = 1;
+        bombFrequency = 0.1f;
+        bombSpeed = 0.02f;
+        newBoat = false;
+        drawBoat(boatType);
+        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
+    }else if(s->buttonStatus == "boatC" && newBoat == true){
+        boatType = 3;
+        bombType = 3;
+        bombFrequency = 1.5f;
+        bombSpeed = 0.005f;
+        newBoat = false;
+        drawBoat(boatType);
+        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
+    }else{
+        drawBoat(boatType);
+        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
+    }
+}
+
+void Boat::drawBoat(int boatType){
     float x1 = boatX - boatSize * boatType / 2;
     float y1 = boatY - boatSize * boatType / 2 ;
     float x2 = x1;
@@ -16,7 +48,6 @@ void Boat::draw(){
     float x3 = boatX + boatSize * boatType /2;
     float y3 = boatY;
     GraphicPrimitives::drawFillTriangle2D(x1, y1, x2, y2, x3, y3, 1.0f, 0.0f, 1.0f);
-    drawBomb(bombX, bombY, boatType, bombFrequency, bombSpeed);
 }
 
 void Boat::drawBomb(float bombX, float bombY, int bombType, float bombFrequency, float bombSpeed){
@@ -43,10 +74,6 @@ void Boat::tick(std::vector<Star * >& stars){
         bombX = boatX;
     }
 }
-
-//void shootStar(std::vector<Star *> stars){
-//    
-//}
 
 
 

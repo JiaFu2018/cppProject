@@ -3,7 +3,10 @@
 void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         // add boats
-        boats->push_back(new Boat(setting.getBoatX(x), setting.getBoatY(y), 0.05f, 2));
+        if(setting.getBoatX(x) != -9.99f && setting.getBoatY(y) != -9.99f)
+        {
+            boats->push_back(new Boat(setting.getBoatX(x), setting.getBoatY(y), 0.05f, 2));
+        }
         
         // init random stars
         srand((unsigned)time(NULL));

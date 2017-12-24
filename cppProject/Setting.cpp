@@ -12,6 +12,10 @@
 void Setting::draw(){
     drawSysInfo(level, coin, starNum);
     drawChessboard();
+    drawButton(0.38f, -0.8f, "start");
+    drawButton(-0.8f, -0.73f, "boatA");
+    drawButton(-0.6f, -0.73f, "boatB");
+    drawButton(-0.4f, -0.73f, "boatC");
 }
 
 void Setting::drawSysInfo(int level, int coin, int starNum){
@@ -53,6 +57,29 @@ void Setting::drawChessboard(){
         GraphicPrimitives::drawLine2D(lineX, -lineY, lineX, lineY, 1.0f, 0.0f, 1.0f);
         lineX += 0.17f;
     }
+}
+
+void Setting::drawButton(float buttonX, float buttonY, std::string buttonType){
+    if(buttonType == "start"){
+        GraphicPrimitives::drawFillRect2D(buttonX, buttonY, 0.3f, 0.15f, 0.75f, 0.75f, 0.75f);
+        char c[20];
+        std::string titleButton = "start";
+        GraphicPrimitives::drawText2D(strcpy(c,titleButton.c_str()), buttonX + 0.1f, buttonY + 0.06f, 0, 0, 0);
+    }else if(buttonType == "pause"){
+        GraphicPrimitives::drawFillRect2D(buttonX, buttonY, 0.3f, 0.15f, 0.75f, 0.75f, 0.75f);
+        char c[20];
+        std::string titleButton = "pause";
+        GraphicPrimitives::drawText2D(strcpy(c,titleButton.c_str()), buttonX + 0.1f, buttonY + 0.06f, 0, 0, 0);
+    }else{
+        float x1 = buttonX - 0.05f;
+        float y1 = buttonY - 0.06f;
+        float x2 = x1;
+        float y2 = buttonY + 0.06f;
+        float x3 = buttonX + 0.05f;
+        float y3 = buttonY;
+        GraphicPrimitives::drawFillTriangle2D(x1, y1, x2, y2, x3, y3, 1.0f, 0.0f, 1.0f);
+    }
+   // GraphicPrimitives::drawFillRect2D(buttonX, buttonY, width, height, 0.75f, 0.75f, 0.75f);
 }
 
 float Setting::getBoatX(float mouseX){

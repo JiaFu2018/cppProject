@@ -21,6 +21,7 @@ public:
     void draw();
     void drawSysInfo(int level, int coin, int starNum);
     void drawChessboard();
+    void drawButton(float buttonX, float buttonY, std::string buttonType);
     float getBoatX(float mouseX);
     float getBoatY(float mouseY);
 };

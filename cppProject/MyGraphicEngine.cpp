@@ -14,7 +14,6 @@ void MyGraphicEngine::Draw(){
     for (int i = 0; i < stars->size(); i++) {
         if((*stars)[i]->starX < -1.0f) (*stars).erase((*stars).begin() + i);
         (*stars)[i]->draw();
-        cout << stars->size() << endl;
     }
 }
 
@@ -37,3 +36,10 @@ void MyGraphicEngine::drawChessboard(){
         lineX += 0.17f;
     }
 }
+
+
+
+
+
+
+

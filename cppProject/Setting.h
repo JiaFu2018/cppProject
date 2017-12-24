@@ -8,6 +8,7 @@
 
 #pragma once
 #include "GraphicPrimitives.h"
+#include "Boat.h"
 
 class Setting {
     
@@ -20,4 +21,6 @@ public:
     float R,G,B;*/
     
     void draw();
+    float getBoatX(float mouseX);
+    float getBoatY(float mouseY);
 };

@@ -12,7 +12,7 @@ class Boat {
     
 public:
 
-    Boat(float boatX_ = 0.0f,float boatY_ = 0.0f, float boatSize_ = 0.05f, int boatType_ =2):
+    Boat(float boatX_,float boatY_, float boatSize_ = 0.05f, int boatType_ =2):
     boatX(boatX_),
     boatY(boatY_),
     boatSize(boatSize_),
@@ -30,4 +30,5 @@ public:
     void draw();
     void tick();
     void drawBomb(float bombX, float bombY, int bombType, float bombFrequency, float bombSpeed);
+
 };

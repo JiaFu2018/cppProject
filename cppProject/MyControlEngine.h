@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine.h"
+#include "Setting.h"
 #include "Boat.h"
 #include "Star.h"
 
@@ -10,5 +11,8 @@ public:
     MyControlEngine(std::vector<Boat * > * boats_, std::vector<Star * > * stars_):boats(boats_),stars(stars_){}
    
     virtual void MouseCallback(int button, int state, int x, int y) ;
+    
+private:
+    Setting setting;
 };
-;
+

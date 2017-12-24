@@ -8,8 +8,14 @@
 
 #include "Boat.h"
 
-void Boat::draw(){    
-    GraphicPrimitives::drawFillTriangle2D(boatX, boatY - boatSize * boatType, boatX, boatY + boatSize * boatType, boatX + boatSize * boatType, boatY, 1.0f, 0.0f, 1.0f);
+void Boat::draw(){
+    float x1 = boatX - boatSize * boatType / 2;
+    float y1 = boatY - boatSize * boatType / 2 ;
+    float x2 = x1;
+    float y2 = boatY + boatSize * boatType / 2 ;
+    float x3 = boatX + boatSize * boatType /2;
+    float y3 = boatY;
+    GraphicPrimitives::drawFillTriangle2D(x1, y1, x2, y2, x3, y3, 1.0f, 0.0f, 1.0f);
     drawBomb(bombX, bombY, boatType, bombFrequency, bombSpeed);
 }
 
@@ -32,3 +38,15 @@ void Boat::tick(){
         bombX = boatX;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

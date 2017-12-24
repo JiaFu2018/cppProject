@@ -11,18 +11,18 @@
 void Boat::draw(){
     Setting* s = Setting::getInstance();
     if(s->buttonStatus == "boatA" && newBoat == true){
-        boatType = 2;
-        bombType = 2;
-        bombFrequency = 0.5f;
-        bombSpeed = 0.01f;
-        newBoat = false;
-        drawBoat(boatType);
-        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
-    }else if(s->buttonStatus == "boatB" && newBoat == true){
         boatType = 1;
         bombType = 1;
         bombFrequency = 0.1f;
         bombSpeed = 0.02f;
+        newBoat = false;
+        drawBoat(boatType);
+        drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
+    }else if(s->buttonStatus == "boatB" && newBoat == true){
+        boatType = 2;
+        bombType = 2;
+        bombFrequency = 0.5f;
+        bombSpeed = 0.01f;
         newBoat = false;
         drawBoat(boatType);
         drawBomb(bombX, bombY, bombType, bombFrequency, bombSpeed);
@@ -64,9 +64,15 @@ void Boat::drawBomb(float bombX, float bombY, int bombType, float bombFrequency,
 }
 
 void Boat::tick(std::vector<Star * >& stars){
+    Setting* s = Setting::getInstance();
     // stars flying
     for (int i = 0; i < stars.size(); i++) {
-        if((bombX > stars[i]->starX -0.05f) && (bombY == stars[i]->starY)) stars.erase((stars).begin() + i);
+        if((bombX > stars[i]->starX -0.05f) && (bombY == stars[i]->starY))
+        {
+            stars.erase((stars).begin() + i);
+            s->updateCoins(stars[i]->starEnergy);
+            s->updateStarNum(stars.size());
+        }
     }
     
     bombX += bombSpeed;

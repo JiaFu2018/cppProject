@@ -11,7 +11,7 @@
 
 void Setting::draw(){
 
-    drawSysInfo(level, coin, starNum);
+    drawSysInfo();
     drawChessboard();
     drawButton(0.38f, -0.8f, "start");
     (this->buttonStatus == "boatA") ? drawButtonChosen(-0.8f, -0.72f, "boatA") : drawButton(-0.8f, -0.72f, "boatA");
@@ -19,7 +19,7 @@ void Setting::draw(){
     (this->buttonStatus == "boatC") ? drawButtonChosen(-0.4f, -0.72f, "boatC") : drawButton(-0.4f, -0.72f, "boatC");
 }
 
-void Setting::drawSysInfo(int level, int coin, int starNum){
+void Setting::drawSysInfo(){
     char c[20];
     std::string titleLevel = "Level";
     GraphicPrimitives::drawText2D(strcpy(c,titleLevel.c_str()), -0.78f, 0.85f, 1, 1, 0);
@@ -141,3 +141,16 @@ float Setting::getBoatY(float mouseY){
         return 0.375f;
     }else return -9.99f;
 }
+
+void Setting::updateCoins(int starEnergy){
+    coin += starEnergy * 100;
+}
+
+void Setting::updateStarNum(int starNum_){
+    starNum = starNum_;
+}
+
+
+
+
+

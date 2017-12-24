@@ -15,7 +15,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         }else if(mouseX >= 0.38f && mouseX < 0.68f && mouseY >= -0.8f && mouseY < -0.65f){
             // init random stars
             srand((unsigned)time(NULL));
-            for(int i = 1; i < 20; i ++){
+            for(int i = 1; i < 21; i ++){
                 float x = 1 + rand() / float(RAND_MAX) * 8;
                 float y = (rand() % 4 - 1.5f) / 4;                
                 int starEnergy = rand() % 3 + 1 ;
@@ -29,8 +29,6 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
         }else if(mouseX >= -0.48f && mouseX < -0.33f && mouseY >= -0.8f && mouseY < -0.63f){
             s->drawButtonChosen(mouseX, mouseY, "boatC");
         }
-        
-        
 
     }
 }

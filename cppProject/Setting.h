@@ -18,25 +18,23 @@ public:
         return &instance;
     };
     
-//    Setting(int level_ = 1, int coin_ = 0, int starNum_ = 20):
-//    level(level_),
-//    coin(coin_),
-//    starNum(starNum_){}
+    float getBoatX(float mouseX);
+    float getBoatY(float mouseY);
     
     const char *c_str();
     int level = 1;
     int starNum = 20;
     int coin = 0;
-
     std::string buttonStatus;
     
     void draw();
-    void drawSysInfo(int level, int coin, int starNum);
+    void drawSysInfo();
     void drawChessboard();
     void drawButton(float buttonX, float buttonY, std::string buttonType);
     void drawButtonChosen(float buttonX, float buttonY, std::string buttonStatus);
-    float getBoatX(float mouseX);
-    float getBoatY(float mouseY);
+    void updateCoins(int starEnergy);
+    void updateStarNum(int starNum_);
+
     
 private:
     Setting(){};

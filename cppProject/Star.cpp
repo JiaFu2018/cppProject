@@ -9,7 +9,6 @@
 #include "Star.h"
 
 void Star::draw(){    
-    //GraphicPrimitives::drawFillRect2D(posX,posY,width,height,R,G,B);
     drawMultiType(1.0f, 1.0f, 0.0f);
 
 

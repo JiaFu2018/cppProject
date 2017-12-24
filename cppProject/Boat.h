@@ -7,6 +7,7 @@
 //
 #pragma once
 #include "GraphicPrimitives.h"
+#include "Star.h"
 
 class Boat {
     
@@ -26,9 +27,11 @@ public:
     float bombX, bombY, bombFrequency, bombSpeed;
     int boatType, bombType;
     const double PI = acos(-1.0f);
+    //std::vector<Star *> stars;
     
     void draw();
-    void tick();
+    void tick(std::vector<Star * >& stars);
     void drawBomb(float bombX, float bombY, int bombType, float bombFrequency, float bombSpeed);
+    //void shootStar(std::vector<Star *> stars);
 
 };

@@ -32,12 +32,21 @@ void Boat::drawBomb(float bombX, float bombY, int bombType, float bombFrequency,
     glFlush();
 }
 
-void Boat::tick(){
+void Boat::tick(std::vector<Star * >& stars){
+    // stars flying
+    for (int i = 0; i < stars.size(); i++) {
+        if((bombX > stars[i]->starX -0.05f) && (bombY == stars[i]->starY)) stars.erase((stars).begin() + i);
+    }
+    
     bombX += bombSpeed;
     if (bombX > 1.0f) {
         bombX = boatX;
     }
 }
+
+//void shootStar(std::vector<Star *> stars){
+//    
+//}
 
 
 

@@ -4,9 +4,7 @@ void MyControlEngine::MouseCallback(int button, int state, int x, int y){
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         float mouseX = (x - 400) / 400.f;
         float mouseY = (y - 300) / -300.f;
-        std::cout << "******* x:"<< mouseX << std::endl;
-        std::cout << "******* y:"<< mouseY << std::endl;
-        
+
         Setting* s = Setting::getInstance();
         if(mouseX >= -1.0f && mouseX < 0.7f && mouseY >= -0.5f && mouseY < 0.5f){
             // add boats

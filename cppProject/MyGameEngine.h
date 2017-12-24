@@ -11,5 +11,4 @@ public:
     MyGameEngine(std::vector<Boat * > * boats_, std::vector<Star * > * stars_):boats(boats_),stars(stars_){}
     
     virtual void idle();
-    
 };

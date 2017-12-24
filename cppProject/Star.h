@@ -14,7 +14,7 @@
 class Star {
 public:
     
-    Star(float starX_ = 0.0f, float starY_ = 0.0f, float starRadius_ = 0.02f, float starSpeed_ = 0.01f):starX(starX_),starY(starY_),starRadius(starRadius_),starSpeed(starSpeed_){}
+    Star(float starX_ = 0.0f, float starY_ = 0.0f, float starRadius_ = 0.02f, float starSpeed_ = 0.01f, int starEnergy_ = 3):starX(starX_),starY(starY_),starRadius(starRadius_),starSpeed(starSpeed_),starEnergy(starEnergy_){}
     
     float starX, starY, starRadius, starSpeed;
     float starR, starG, starB;

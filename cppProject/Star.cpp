@@ -8,10 +8,14 @@
 
 #include "Star.h"
 
-void Star::draw(){    
-    drawMultiType(1.0f, 1.0f, 0.0f);
-
-
+void Star::draw(){
+    if(starEnergy == 1){
+        drawMultiType(1.0f, 1.0f, 0.0f);
+    }else if(starEnergy == 2){
+        drawMultiType(0.0f, 0.5f, 0.0f);
+    }else{
+        drawMultiType(0.0f, 0.0f, 1.0f);
+    }
 }
 
 void Star::tick(){

@@ -13,14 +13,14 @@
 class Setting {
     
 public:
-    Setting(){}
-    /*Setting(float posX_ = 0.0f,float posY_ = 0.0f):posX(posX_),posY(posY_),width(0.1f),height(0.1f),VposX(0.01f),VposY(0.02f),Vwidth(0.01f),Vheight(-0.02f), R (1.0f), G(0.0f), B(1.0f){}
+    Setting(int level_ = 1, int coin_ = 0, int starNum_ = 20):level(level_),coin(coin_),starNum(starNum_){}
     
-    float posX,posY,width,height;
-    float VposX,VposY,Vwidth,Vheight;
-    float R,G,B;*/
+    const char *c_str();
+    int level, coin, starNum;
     
     void draw();
+    void drawSysInfo(int level, int coin, int starNum);
+    void drawChessboard();
     float getBoatX(float mouseX);
     float getBoatY(float mouseY);
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include "Engine.h"
 #include "GraphicPrimitives.h"
+#include "Setting.h"
 #include "Boat.h"
 #include "Star.h"
 
@@ -13,6 +14,7 @@ public:
     MyGraphicEngine(std::vector<Boat * > * boats_, std::vector<Star * > * stars_):boats(boats_),stars(stars_){}
     
     virtual void Draw();
-    void drawChessboard();
     
+private:
+    Setting setting;
 };

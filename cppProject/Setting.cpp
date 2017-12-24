@@ -5,13 +5,54 @@
 //  Created by 符佳 on 20/12/2017.
 //  Copyright © 2017 符佳. All rights reserved.
 //
-
+#include <sstream>
 #include "Setting.h"
 
+
 void Setting::draw(){
+    drawSysInfo(level, coin, starNum);
+    drawChessboard();
+}
+
+void Setting::drawSysInfo(int level, int coin, int starNum){
+    char c[20];
+    std::string titleLevel = "Level";
+    GraphicPrimitives::drawText2D(strcpy(c,titleLevel.c_str()), -0.78f, 0.85f, 1, 1, 0);
+    std::ostringstream sLevel;
+    sLevel<<level;
+    GraphicPrimitives::drawText2D(strcpy(c,sLevel.str().c_str()), -0.78f, 0.75f, 1, 1, 0);
     
-    //GraphicPrimitives::drawFillRect2D(posX,posY,width,height,R,G,B);
+    std::string titleCoin = "Coins";
+    GraphicPrimitives::drawText2D(strcpy(c,titleCoin.c_str()), -0.18f, 0.85f, 1, 1, 0);
+    std::ostringstream sCoin;
+    sCoin<<coin;
+    GraphicPrimitives::drawText2D(strcpy(c,sCoin.str().c_str()), -0.18f, 0.75f, 1, 1, 0);
     
+    std::string titleStar = "Stars Num";
+    GraphicPrimitives::drawText2D(strcpy(c,titleStar.c_str()), 0.48f, 0.85f, 1, 1, 0);
+    std::ostringstream sStarNum;
+    sStarNum<<starNum;
+    GraphicPrimitives::drawText2D(strcpy(c,sStarNum.str().c_str()), 0.48f, 0.75f, 1, 1, 0);
+}
+
+void Setting::drawChessboard(){
+    float lineX = -1.0f;
+    float lineY = -0.75f;
+    int numH = 5;
+    int numV = 11;
+    // drawing horizontal lines
+    for(int i = 0; i < numH; i++)
+    {
+        lineY += 0.25f;
+        GraphicPrimitives::drawLine2D(lineX, lineY, -lineX - 0.3f, lineY, 1.0f, 0.0f, 1.0f);
+    }
+    
+    // drawing vertical lines
+    for(int i = 0; i < numV; i++)
+    {
+        GraphicPrimitives::drawLine2D(lineX, -lineY, lineX, lineY, 1.0f, 0.0f, 1.0f);
+        lineX += 0.17f;
+    }
 }
 
 float Setting::getBoatX(float mouseX){

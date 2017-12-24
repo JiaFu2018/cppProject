@@ -11,17 +11,34 @@
 #include "Boat.h"
 
 class Setting {
-    
+
 public:
-    Setting(int level_ = 1, int coin_ = 0, int starNum_ = 20):level(level_),coin(coin_),starNum(starNum_){}
+    static Setting* getInstance(){
+        static Setting instance;
+        return &instance;
+    };
+    
+//    Setting(int level_ = 1, int coin_ = 0, int starNum_ = 20):
+//    level(level_),
+//    coin(coin_),
+//    starNum(starNum_){}
     
     const char *c_str();
-    int level, coin, starNum;
+    int level = 1;
+    int starNum = 20;
+    int coin = 0;
+
+    std::string buttonStatus;
     
     void draw();
     void drawSysInfo(int level, int coin, int starNum);
     void drawChessboard();
     void drawButton(float buttonX, float buttonY, std::string buttonType);
+    void drawButtonChosen(float buttonX, float buttonY, std::string buttonStatus);
     float getBoatX(float mouseX);
     float getBoatY(float mouseY);
+    
+private:
+    Setting(){};
+    ~Setting(){}
 };

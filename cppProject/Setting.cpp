@@ -10,12 +10,13 @@
 
 
 void Setting::draw(){
+
     drawSysInfo(level, coin, starNum);
     drawChessboard();
     drawButton(0.38f, -0.8f, "start");
-    drawButton(-0.8f, -0.73f, "boatA");
-    drawButton(-0.6f, -0.73f, "boatB");
-    drawButton(-0.4f, -0.73f, "boatC");
+    (this->buttonStatus == "boatA") ? drawButtonChosen(-0.8f, -0.72f, "boatA") : drawButton(-0.8f, -0.72f, "boatA");
+    (this->buttonStatus == "boatB") ? drawButtonChosen(-0.6f, -0.72f, "boatB") : drawButton(-0.6f, -0.72f, "boatB");
+    (this->buttonStatus == "boatC") ? drawButtonChosen(-0.4f, -0.72f, "boatC") : drawButton(-0.4f, -0.72f, "boatC");
 }
 
 void Setting::drawSysInfo(int level, int coin, int starNum){
@@ -79,45 +80,64 @@ void Setting::drawButton(float buttonX, float buttonY, std::string buttonType){
         float y3 = buttonY;
         GraphicPrimitives::drawFillTriangle2D(x1, y1, x2, y2, x3, y3, 1.0f, 0.0f, 1.0f);
     }
-   // GraphicPrimitives::drawFillRect2D(buttonX, buttonY, width, height, 0.75f, 0.75f, 0.75f);
+}
+
+void Setting::drawButtonChosen(float buttonX, float buttonY, std::string status){
+
+    if(status == "pause")
+    {
+        drawButton(buttonX, buttonY, "pause");
+    }else if(status == "boatA"){
+        this->buttonStatus = status;
+        GraphicPrimitives::drawFillRect2D(buttonX - 0.08f, buttonY - 0.08f, 0.15f, 0.17f, 0.75f, 0.75f, 0.75f);
+        drawButton(buttonX, buttonY, "boatA");
+    }else if(status == "boatB"){
+        this->buttonStatus = status;
+        GraphicPrimitives::drawFillRect2D(buttonX - 0.08f, buttonY - 0.08f, 0.15f, 0.17f, 0.75f, 0.75f, 0.75f);
+        drawButton(buttonX, buttonY, "boatB");
+    }else if(status == "boatC"){
+        this->buttonStatus = status;
+        GraphicPrimitives::drawFillRect2D(buttonX - 0.08f, buttonY - 0.08f, 0.15f, 0.17f, 0.75f, 0.75f, 0.75f);
+        drawButton(buttonX, buttonY, "boatC");
+    }else{
+        this->buttonStatus = status;
+        drawButton(buttonX, buttonY, "start");
+    }
+    
 }
 
 float Setting::getBoatX(float mouseX){
-    float boatX = (mouseX - 400) / 400.f;
-
-    if(boatX >= -1.0 && boatX < -0.83f) {
+    if(mouseX >= -1.0 && mouseX < -0.83f) {
         return -0.915f;
-    }else if(boatX >= -0.83f && boatX < -0.66f) {
+    }else if(mouseX >= -0.83f && mouseX < -0.66f) {
         return -0.745f;
-    }else if(boatX >= -0.66f && boatX < -0.49f) {
+    }else if(mouseX >= -0.66f && mouseX < -0.49f) {
         return -0.575f;
-    }else if(boatX >= -0.49f && boatX < -0.32f) {
+    }else if(mouseX >= -0.49f && mouseX < -0.32f) {
         return -0.405f;
-    }else if(boatX >= -0.32f && boatX < -0.15f) {
+    }else if(mouseX >= -0.32f && mouseX < -0.15f) {
         return -0.235f;
-    }else if(boatX >= -0.15f && boatX < 0.02f) {
-        return 0.065f;
-    }else if(boatX >= 0.02f && boatX < 0.19f) {
+    }else if(mouseX >= -0.15f && mouseX < 0.02f) {
+        return -0.065f;
+    }else if(mouseX >= 0.02f && mouseX < 0.19f) {
         return 0.105f;
-    }else if(boatX >= 0.19f && boatX < 0.36f) {
+    }else if(mouseX >= 0.19f && mouseX < 0.36f) {
         return 0.275f;
-    }else if(boatX >= 0.36f && boatX < 0.53f) {
+    }else if(mouseX >= 0.36f && mouseX < 0.53f) {
         return 0.445f;
-    }else if(boatX >= 0.53f && boatX < 0.7f) {
+    }else if(mouseX >= 0.53f && mouseX < 0.7f) {
         return 0.615f;
     }else return -9.99f;
 }
 
 float Setting::getBoatY(float mouseY){
-    float boatY = (mouseY - 300) / -300.f;
-
-    if(boatY >= -0.5f && boatY < -0.25f) {
+    if(mouseY >= -0.5f && mouseY < -0.25f) {
         return -0.375f;
-    }else if(boatY >= -0.25f && boatY < 0.0f) {
+    }else if(mouseY >= -0.25f && mouseY < 0.0f) {
         return -0.125f;
-    }else if(boatY >= -0.0f && boatY < 0.25f) {
+    }else if(mouseY >= -0.0f && mouseY < 0.25f) {
         return 0.125f;
-    }else if(boatY >= 0.25f && boatY < 0.5f) {
+    }else if(mouseY >= 0.25f && mouseY < 0.5f) {
         return 0.375f;
     }else return -9.99f;
 }

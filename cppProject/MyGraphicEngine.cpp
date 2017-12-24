@@ -4,7 +4,7 @@ using namespace std;
 void MyGraphicEngine::Draw(){
     
     // draw game info and chessboard
-    setting.draw();
+    Setting::getInstance()->draw();
     
     // drawing boats
     for (int i = 0; i < boats->size(); i++) {

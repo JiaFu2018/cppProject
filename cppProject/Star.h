@@ -7,18 +7,22 @@
 //
 
 #pragma once
+#include <vector>
 #include "GraphicPrimitives.h"
 
+
 class Star {
-    
 public:
     
-    Star(float starX_ = 0.0f, float starY_ = 0.0f, float starR_ = 0.02f, float starSpeed_ = 0.01f):starX(starX_),starY(starY_),starR(starR_),starSpeed(starSpeed_){}
+    Star(float starX_ = 0.0f, float starY_ = 0.0f, float starRadius_ = 0.02f, float starSpeed_ = 0.01f):starX(starX_),starY(starY_),starRadius(starRadius_),starSpeed(starSpeed_){}
     
-    float starX, starY, starR, starSpeed;
-    int starType, starEnergy;
+    float starX, starY, starRadius, starSpeed;
+    float starR, starG, starB;
+    int starsNum, starType, starEnergy;
     
     void draw();
     void tick();
-    
+    void drawMultiType(float starR, float starG, float starB);
+    void getStarInfo(int starType);
+    void initStars(int starNum);
 };

@@ -11,8 +11,10 @@ void MyGraphicEngine::Draw(){
     }
     
     // stars flying
-    for (int i = 0; i < boats->size(); i++) {
+    for (int i = 0; i < stars->size(); i++) {
+        if((*stars)[i]->starX < -1.0f) (*stars).erase((*stars).begin() + i);
         (*stars)[i]->draw();
+        cout << stars->size() << endl;
     }
 }
 
